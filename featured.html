@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Featured Products - DigiHub</title>
+
+        <!-- Meta Tags for SEO -->
+        <meta
+        name="description"
+        content="DigiHub - Premium shopping experience with latest fashion trends, electronics, and lifestyle products."
+      />
+      <meta
+        name="keywords"
+        content="ecommerce, online shopping, fashion, electronics, lifestyle"
+      />
+  
+      <!-- Facebook Meta Tags -->
+      <meta property="og:title" content="DigiHub - Premium Shopping Experience" />
+      <meta
+        property="og:description"
+        content="Discover the latest trends in fashion, electronics, and lifestyle products."
+      />
+      <meta property="og:image" content="/api/placeholder/1200/630" />
+      <meta property="og:url" content="https://DigiHub.com" />
+  
+      <!-- Twitter Meta Tags -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content="DigiHub - Premium Shopping Experience"
+      />
+      <meta
+        name="twitter:description"
+        content="Discover the latest trends in fashion, electronics, and lifestyle products."
+      />
+      <meta name="twitter:image" content="/api/placeholder/1200/630" />
+  
+      <!-- Telegram Meta Tags -->
+      <meta name="telegram:channel" content="@DigiHub" />
+      <meta
+        name="telegram:description"
+        content="Follow us on Telegram for exclusive deals and updates!"
+      />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SUSE:wght@100..800&family=Suwannaphum:wght@100;300;400;700;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+      :root {
+        --primary-color: #07063e;
+        --secondary-color: #0f59af;
+        --accent-color: #ff6b6b;
+        --bg-light: #f8f9fa;
+        --text-dark: #000;
+        --text-light: #ecf0f1;
+      }
+      .logo {
+        width: 60px;
+      }
+
+      .navbar {
+        background-color: var(--primary-color) !important;
+      }
+      .navbar-brand {
+        font-family: "Ubuntu";
+        font-weight: bold;
+        font-size: 25px;
+      }
+
+      .nav-link {
+        position: relative;
+        text-decoration: none;
+      }
+
+      .nav-link::after {
+        content: "";
+        display: block;
+        height: 2px;
+        background-color: #ffffff;
+        width: 0;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .featured-hero {
+        background: linear-gradient(
+            rgba(108, 99, 255, 0.8),
+            rgba(74, 144, 226, 0.8)
+          ),
+          url("/api/placeholder/1920/400");
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        color: white;
+      }
+
+      .product-container {
+        position: relative;
+      }
+
+      .product-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        margin-bottom: -20px;
+        position: relative;
+        z-index: 2;
+        transition: transform 0.3s ease;
+      }
+
+      .product-card {
+        margin-top: -30px 30px;
+        padding-top: 30px;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 1;
+        background: white;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .product-container:hover .product-card {
+        transform: translateY(-5px);
+      }
+
+      .product-container:hover .product-image {
+        transform: translateY(-5px);
+        transform: scale(1.05);
+      }
+      
+      .card-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .price-tag {
+        color: var(--accent-color);
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      .btn-success {
+        background-color: var(--accent-color) !important;
+        border-color: var(--accent-color) !important;
+      }
+
+      /* Button Styles */
+      .product-card .btn {
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+
+      .product-card .btn-success {
+        background: #28a745;
+        border: none;
+      }
+
+      .product-card .btn-success:hover {
+        background: #218838;
+        transform: translateY(-2px);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .product-card .card-img-top {
+          height: 260px;
+        }
+      }
+
+      .filters {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .category-active {
+        color: var(--accent-color);
+        font-weight: bold;
+      }
+
+      .rating {
+        color: #ffd700;
+      }
+      footer {
+        background: var(--text-dark) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a href="/index.html"
+            ><img
+              src="https://i0.wp.com/www.douggrady.com/wp-content/uploads/2019/01/dg-logo.png?fit=300%2C300&ssl=1"
+              alt="DG Logo"
+              class="logo"
+          /></a>
+          <a class="navbar-brand" href="/index.html">DigiHub</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/featured.html">Featured</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about.html">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Featured Hero Section -->
+    <section class="featured-hero">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold">Featured Products</h1>
+        <p class="lead">
+          Discover our handpicked selection of premium products
+        </p>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="py-4">
+      <div class="container">
+        <div class="filters p-4 mb-4">
+          <div class="row align-items-center">
+            <div class="col-md-4">
+              <select class="form-select">
+                <option>Sort by: Featured</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Newest First</option>
+              </select>
+            </div>
+            <div class="col-md-8">
+              <div class="d-flex gap-4 justify-content-md-end mt-3 mt-md-0">
+                <a
+                  href="#"
+                  class="text-decoration-none text-dark category-active"
+                  >All</a
+                >
+                <a href="#" class="text-decoration-none text-dark"
+                  >Electronics</a
+                >
+                <a href="#" class="text-decoration-none text-dark">Fashion</a>
+                <a href="#" class="text-decoration-none text-dark">Home</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured" class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://www.rhodium.com.tr/assets/rolex/collection_page/watch_assets_upright/m279135rbr-0001_collection_upright_portrait.png"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Premium Watch</h5>
+                <p class="card-text">Elegant timepiece for any occasion</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-2">(4.5)</span>
+                </div>
+                <p class="price-tag mb-3">$199.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://i0.wp.com/directdealz.lk/wp-content/uploads/2024/10/Xiaomi-Redmi-Buds-6-Lite-7.png?fit=650%2C650&ssl=1"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Wireless Earbuds</h5>
+                <p class="card-text">Premium sound quality</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-2">(4.5)</span>
+                </div>
+                <p class="price-tag mb-3">$149.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://img.freepik.com/premium-photo/white-women-s-cosmetic-bag-mockup-without-logo_587847-80.jpg?ga=GA1.1.1871191916.1736959269&semt=ais_hybrid"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Designer Bag</h5>
+                <p class="card-text">Stylish and practical</p>
+
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-2">(4.5)</span>
+                </div>
+                <p class="price-tag mb-3">$299.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://i.pcmag.com/imagery/reviews/00EU3U5rRoe9swRlkJE2yDa-1..v1601052236.jpg"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Wireless Speaker</h5>
+                <p class="card-text">Premium sound quality</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-2">(4.5)</span>
+                </div>
+                <p class="price-tag mb-3">$149.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://fitvii.com/cdn/shop/files/20240816-162819.jpg?v=1736766813&width=823"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Smartwatch</h5>
+                <p class="card-text">Track your fitness goals</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="text-muted ms-2">(5 )</span>
+                </div>
+                <p class="price-tag mb-3">$99.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://media.steelseriescdn.com/thumbs/catalog/items/62406/d447dc561ffd4b45a8162f663464f34b.png.500x400_q100_crop-fit_optimize.png"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Gaming Mouse</h5>
+                <p class="card-text">igh precision for gamers</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                  <span class="text-muted ms-2">(4)</span>
+                </div>
+                <p class="price-tag mb-3">$59.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://m.media-amazon.com/images/I/713ZvA5hL9L._AC_SX679_.jpg"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Ceramic Plant Pot</h5>
+                <p class="card-text">Perfect for indoor plants</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <i class="bi bi-star"></i>
+                  <span class="text-muted ms-2">(3.5)</span>
+                </div>
+                <p class="price-tag mb-3">$49.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://vhaan.in/cdn/shop/files/3_6d808391-2166-4b73-b6b0-be206ec18fc7.png?v=1712247309&width=1200"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Leather Wallet</h5>
+                <p class="card-text">Durable and stylish design</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <span class="text-muted ms-2">(3.5)</span>
+                </div>
+                <p class="price-tag mb-3">$69.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://dam.delonghi.com/600x600/assets/189537"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Coffee Maker</h5>
+                <p class="card-text">Brew your perfect cup every morning</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <span class="text-muted ms-2">(4.5)</span>
+                </div>
+                <p class="price-tag mb-3">$349.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://tangoofficial.com/cdn/shop/products/Adobe_Express_20221118_0155500_1.png?v=1668718639&width=823"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Leather Jacket</h5>
+                <p class="card-text">
+                  Stylish and comfortable for any occasion
+                </p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                  <span class="text-muted ms-2">(4)</span>
+                </div>
+                <p class="price-tag mb-3">$99.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://static5.lenskart.com/media/catalog/product/pro/1/thumbnail/480x480/9df78eab33525d08d6e5fb8d27136e95//v/i/matte-black-grey-solid-full-rim-rectangle-square-vincent-chase-polarized-the-metal-edit-vc-s13116-c1-sunglasses_vincent-chase-vc-s13116-c1-sunglasses_g_7206_1_5july23.jpg"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Sunglasses</h5>
+                <p class="card-text">Protect your eyes with style</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                  <span class="text-muted ms-2">(4)</span>
+                </div>
+                <p class="price-tag mb-3">$59.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://theheel.com/cdn/shop/products/1023651_1_834193fe-7ad3-4daf-9546-3efe40896d21.jpg"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Sneakers</h5>
+                <p class="card-text">Comfort and style for everyday wear</p>
+                <div class="rating mb-2">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                  <i class="bi bi-star"></i>
+                  <span class="text-muted ms-2">(3.5)</span>
+                </div>
+                <p class="price-tag mb-3">$89.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us py-5 bg-white">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold">Why Choose Us</h2>
+          <p class="lead">
+            We're committed to providing the best shopping experience with
+            premium products and exceptional service
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Feature 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="feature-card text-center p-4 h-100">
+              <i class="bi bi-shield-check text-success fs-1 mb-3"></i>
+              <h3 class="h5 mb-3">Secure Shopping</h3>
+              <p class="text-muted">
+                100% secure payment processing and data protection for all
+                orders
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="feature-card text-center p-4 h-100">
+              <i class="bi bi-truck text-success fs-1 mb-3"></i>
+              <h3 class="h5 mb-3">Fast Delivery</h3>
+              <p class="text-muted">
+                Free shipping on orders over $50 with quick 2-3 day delivery
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="feature-card text-center p-4 h-100">
+              <i
+                class="bi bi-arrow-counterclockwise text-success fs-1 mb-3"
+              ></i>
+              <h3 class="h5 mb-3">Easy Returns</h3>
+              <p class="text-muted">
+                30-day hassle-free return policy for all products
+              </p>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="feature-card text-center p-4 h-100">
+              <i class="bi bi-headset text-success fs-1 mb-3"></i>
+              <h3 class="h5 mb-3">24/7 Support</h3>
+              <p class="text-muted">
+                Round-the-clock customer service to assist you anytime
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-4">
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>
+              DigiHub is your premium destination for the latest trends in
+              fashion, electronics, and lifestyle products.
+            </p>
+          </div>
+          <div class="col-md-4 text-end">
+            <h5 justify-content-md-end mt-3 mt-md-0>Connect With Us</h5>
+            <div
+              class="d-flex gap-3 fs-4 social-icons justify-content-md-end mt-3 mt-md-0"
+            >
+              <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-telegram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 DigiHub. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

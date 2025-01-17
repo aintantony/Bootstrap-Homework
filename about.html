@@ -3,17 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - ModernShop</title>
+    <title>About Us - DigiHub</title>
 
-    <!-- Meta Tags for SEO -->
-    <meta
-      name="description"
-      content="Learn about ModernShop's story, mission, and the team behind your favorite shopping destination."
-    />
-    <meta
-      name="keywords"
-      content="about us, company history, team, mission, vision, modernshop"
-    />
+        <!-- Meta Tags for SEO -->
+        <meta
+        name="description"
+        content="DigiHub - Premium shopping experience with latest fashion trends, electronics, and lifestyle products."
+      />
+      <meta
+        name="keywords"
+        content="ecommerce, online shopping, fashion, electronics, lifestyle"
+      />
+  
+      <!-- Facebook Meta Tags -->
+      <meta property="og:title" content="DigiHub - Premium Shopping Experience" />
+      <meta
+        property="og:description"
+        content="Discover the latest trends in fashion, electronics, and lifestyle products."
+      />
+      <meta property="og:image" content="/api/placeholder/1200/630" />
+      <meta property="og:url" content="https://DigiHub.com" />
+  
+      <!-- Twitter Meta Tags -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta
+        name="twitter:title"
+        content="DigiHub - Premium Shopping Experience"
+      />
+      <meta
+        name="twitter:description"
+        content="Discover the latest trends in fashion, electronics, and lifestyle products."
+      />
+      <meta name="twitter:image" content="/api/placeholder/1200/630" />
+  
+      <!-- Telegram Meta Tags -->
+      <meta name="telegram:channel" content="@DigiHub" />
+      <meta
+        name="telegram:description"
+        content="Follow us on Telegram for exclusive deals and updates!"
+      />
 
     <!-- Bootstrap CSS -->
     <link
@@ -28,17 +56,47 @@
     />
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SUSE:wght@100..800&family=Suwannaphum:wght@100;300;400;700;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
       :root {
         --primary-color: #07063e;
         --secondary-color: #0f59af;
         --accent-color: #ff6b6b;
         --bg-light: #f8f9fa;
-        --text-dark: #2c3e50;
+        --text-dark: #000;
         --text-light: #ecf0f1;
+      }
+      .logo {
+        width: 60px;
       }
 
       .navbar {
         background-color: var(--primary-color) !important;
+      }
+      .navbar-brand {
+        font-family: "Ubuntu";
+        font-weight: bold;
+        font-size: 25px;
+      }
+
+      .nav-link {
+        position: relative;
+        text-decoration: none;
+      }
+
+      .nav-link::after {
+        content: "";
+        display: block;
+        height: 2px;
+        background-color: #ffffff;
+        width: 0;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
       }
 
       .about-hero {
@@ -120,6 +178,9 @@
         background-color: #ff5252 !important;
         border-color: #ff5252 !important;
       }
+      footer {
+        background: var(--text-dark) !important;
+      }
     </style>
   </head>
   <body>
@@ -127,7 +188,13 @@
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="/index.html">ModernShop</a>
+          <a href="/index.html"
+            ><img
+              src="https://i0.wp.com/www.douggrady.com/wp-content/uploads/2019/01/dg-logo.png?fit=300%2C300&ssl=1"
+              alt="DG Logo"
+              class="logo"
+          /></a>
+          <a class="navbar-brand" href="/index.html">DigiHub</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -142,13 +209,13 @@
                 <a class="nav-link" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="featured.html">Featured</a>
+                <a class="nav-link" href="">Featured</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="/contact.html">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="/about.html">About</a>
               </li>
             </ul>
           </div>
@@ -325,28 +392,21 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
+    <footer class="text-white py-4">
       <div class="container">
-        <div class="row">
+        <div class="row d-flex justify-content-between">
           <div class="col-md-4">
             <h5>About Us</h5>
             <p>
-              ModernShop is your premium destination for the latest trends in
+              DigiHub is your premium destination for the latest trends in
               fashion, electronics, and lifestyle products.
             </p>
           </div>
-          <div class="col-md-4">
-            <h5>Quick Links</h5>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Privacy Policy</a></li>
-              <li><a href="#" class="text-white">Terms & Conditions</a></li>
-              <li><a href="#" class="text-white">Shipping Information</a></li>
-              <li><a href="#" class="text-white">FAQs</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5>Connect With Us</h5>
-            <div class="d-flex gap-3 fs-4">
+          <div class="col-md-4 text-end">
+            <h5 justify-content-md-end mt-3 mt-md-0>Connect With Us</h5>
+            <div
+              class="d-flex gap-3 fs-4 social-icons justify-content-md-end mt-3 mt-md-0"
+            >
               <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
               <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
               <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
@@ -356,7 +416,7 @@
         </div>
         <hr />
         <div class="text-center">
-          <p class="mb-0">&copy; 2025 ModernShop. All rights reserved.</p>
+          <p class="mb-0">&copy; 2025 DigiHub. All rights reserved.</p>
         </div>
       </div>
     </footer>

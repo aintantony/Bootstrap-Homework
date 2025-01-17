@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ModernShop - Your Premium Shopping Destination</title>
+    <title>DigiHub - Your Premium Shopping Destination</title>
 
     <!-- Meta Tags for SEO -->
     <meta
       name="description"
-      content="ModernShop - Premium shopping experience with latest fashion trends, electronics, and lifestyle products."
+      content="DigiHub - Premium shopping experience with latest fashion trends, electronics, and lifestyle products."
     />
     <meta
       name="keywords"
@@ -16,22 +16,19 @@
     />
 
     <!-- Facebook Meta Tags -->
-    <meta
-      property="og:title"
-      content="ModernShop - Premium Shopping Experience"
-    />
+    <meta property="og:title" content="DigiHub - Premium Shopping Experience" />
     <meta
       property="og:description"
       content="Discover the latest trends in fashion, electronics, and lifestyle products."
     />
     <meta property="og:image" content="/api/placeholder/1200/630" />
-    <meta property="og:url" content="https://modernshop.com" />
+    <meta property="og:url" content="https://DigiHub.com" />
 
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="ModernShop - Premium Shopping Experience"
+      content="DigiHub - Premium Shopping Experience"
     />
     <meta
       name="twitter:description"
@@ -40,7 +37,7 @@
     <meta name="twitter:image" content="/api/placeholder/1200/630" />
 
     <!-- Telegram Meta Tags -->
-    <meta name="telegram:channel" content="@modernshop" />
+    <meta name="telegram:channel" content="@DigiHub" />
     <meta
       name="telegram:description"
       content="Follow us on Telegram for exclusive deals and updates!"
@@ -59,76 +56,62 @@
     />
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=SUSE:wght@100..800&family=Suwannaphum:wght@100;300;400;700;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
       :root {
-        --primary-color: #6c63ff; /* Modern Purple */
-        --secondary-color: #4a90e2; /* Bright Blue */
-        --accent-color: #ff6b6b; /* Coral Pink */
+        --primary-color: #07063e;
+        --secondary-color: #0f59af;
+        --accent-color: #ff6b6b;
         --bg-light: #f8f9fa;
-        --text-dark: #2c3e50;
+        --text-dark: #000;
         --text-light: #ecf0f1;
       }
 
       /* Custom Styles */
+      .logo {
+        width: 60px;
+      }
       .navbar {
         background-color: var(--primary-color) !important;
+      }
+      .navbar-brand {
+        font-family: "Ubuntu";
+        font-weight: bold;
+        font-size: 25px;
+      }
+
+      .nav-link {
+        position: relative;
+        text-decoration: none;
+      }
+
+      .nav-link::after {
+        content: "";
+        display: block;
+        height: 2px;
+        background-color: #ffffff;
+        width: 0;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
       }
 
       .hero-section {
         background: linear-gradient(
-          rgba(108, 99, 255, 0.8),
-          rgba(74, 144, 226, 0.8)
-        );
+            rgba(108, 99, 255, 0.8),
+            rgba(74, 144, 226, 0.8)
+          ),
+          url("https://pebblely.com/blog/create-product-images-with-ai/collage-of-ai-generated-images.jpg");
         background-size: cover;
         background-position: center;
         min-height: 80vh;
         display: flex;
         align-items: center;
       }
-
-      <!-- <!-- .product-card {
-        transition: transform 0.3s ease;
-        border: none;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-      -->
-      /* Custom styles for product cards */
-      .product-card {
-        transition: transform 0.3s ease-in-out;
-        background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-      }
-
-      .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .product-card .card-img-top {
-        height: 280px;
-        object-fit: cover;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
-
-      .product-card .card-body {
-        padding: 1.5rem;
-      }
-
-      .price-tag {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #2c3e50;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .product-card .card-img-top {
-          height: 240px;
-        }
-      }
-      .product-card:hover {
-        transform: translateY(-5px);
-      }
-      -->
 
       /* Product Card Base Styles */
       .product-card {
@@ -281,12 +264,17 @@
     </style>
   </head>
   <body>
-    <!-- Rest of the HTML remains the same as the previous version -->
     <!-- Header -->
     <header class="sticky-top">
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-          <a class="navbar-brand" href="./index.html">ModernShop</a>
+          <a href="/index.html"
+            ><img
+              src="https://i0.wp.com/www.douggrady.com/wp-content/uploads/2019/01/dg-logo.png?fit=300%2C300&ssl=1"
+              alt="DG Logo"
+              class="logo"
+          /></a>
+          <a class="navbar-brand" href="/index.html">DigiHub</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -298,16 +286,16 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="./index.html">Home</a>
+                <a class="nav-link" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/build/featured.html">Featured</a>
+                <a class="nav-link" href="/featured.html">Featured</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="build/contact.html">Contact</a>
+                <a class="nav-link" href="/contact.html">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="/about.html">About</a>
               </li>
             </ul>
           </div>
@@ -381,7 +369,7 @@
     <!-- Featured Products Section -->
     <section id="featured" class="py-5 bg-light">
       <div class="container">
-        <h2 class="text-center mb-5">Featured Products</h2>
+        <h2 class="text-center mb-5">Best Sellers</h2>
         <div class="row g-4">
           <div class="col-lg-3 col-md-6">
             <div class="card product-card h-80">
@@ -390,7 +378,7 @@
                 style="height: 200px"
               >
                 <img
-                  src="/image/wireless-earbuds.jpg"
+                  src="https://www.rhodium.com.tr/assets/rolex/collection_page/watch_assets_upright/m279135rbr-0001_collection_upright_portrait.png"
                   class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
                   alt="Product 1"
                 />
@@ -410,7 +398,7 @@
                 style="height: 200px"
               >
                 <img
-                  src="/image/wireless-earbuds.jpg"
+                  src="https://i0.wp.com/directdealz.lk/wp-content/uploads/2024/10/Xiaomi-Redmi-Buds-6-Lite-7.png?fit=650%2C650&ssl=1"
                   class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
                   alt="Product 1"
                 />
@@ -430,7 +418,7 @@
                 style="height: 200px"
               >
                 <img
-                  src="/image/wireless-earbuds.jpg"
+                  src="https://img.freepik.com/premium-photo/white-women-s-cosmetic-bag-mockup-without-logo_587847-80.jpg?ga=GA1.1.1871191916.1736959269&semt=ais_hybrid"
                   class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
                   alt="Product 1"
                 />
@@ -445,22 +433,20 @@
           </div>
           <div class="col-lg-3 col-md-6">
             <div class="card product-card h-80">
-              <div class="card product-card h-80">
-                <div
-                  class="product-img-container position-relative overflow-hidden"
-                  style="height: 200px"
-                >
-                  <img
-                    src="/image/wireless-earbuds.jpg"
-                    class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
-                    alt="Product 1"
-                  />
-                </div>
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="https://i.pcmag.com/imagery/reviews/00EU3U5rRoe9swRlkJE2yDa-1..v1601052236.jpg"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
               </div>
               <div class="card-body">
-                <h5 class="card-title">Smart Speaker</h5>
-                <p class="card-text">Voice-controlled assistant</p>
-                <p class="price-tag mb-3">$129.99</p>
+                <h5 class="card-title">Wireless Speaker</h5>
+                <p class="card-text">Premium sound quality</p>
+                <p class="price-tag mb-3">$299.99</p>
                 <button class="btn btn-success w-100">Buy</button>
               </div>
             </div>
@@ -494,24 +480,15 @@
     <!-- Footer -->
     <footer class="text-white py-4">
       <div class="container">
-        <div class="row">
+        <div class="row d-flex justify-content-between">
           <div class="col-md-4">
             <h5>About Us</h5>
             <p>
-              ModernShop is your premium destination for the latest trends in
+              DigiHub is your premium destination for the latest trends in
               fashion, electronics, and lifestyle products.
             </p>
           </div>
-          <div class="col-md-4">
-            <h5>Quick Links</h5>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-white">Privacy Policy</a></li>
-              <li><a href="#" class="text-white">Terms & Conditions</a></li>
-              <li><a href="#" class="text-white">Shipping Information</a></li>
-              <li><a href="#" class="text-white">FAQs</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
+          <div class="col-md-4 text-end">
             <h5 justify-content-md-end mt-3 mt-md-0>Connect With Us</h5>
             <div
               class="d-flex gap-3 fs-4 social-icons justify-content-md-end mt-3 mt-md-0"
@@ -525,7 +502,7 @@
         </div>
         <hr />
         <div class="text-center">
-          <p class="mb-0">&copy; 2025 ModernShop. All rights reserved.</p>
+          <p class="mb-0">&copy; 2025 DigiHub. All rights reserved.</p>
         </div>
       </div>
     </footer>
