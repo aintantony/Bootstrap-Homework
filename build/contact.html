@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - ModernShop</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta
+      name="description"
+      content="Get in touch with ModernShop. We're here to help with your questions and concerns."
+    />
+    <meta
+      name="keywords"
+      content="contact, support, help, customer service, modernshop"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-color: #07063e;
+        --secondary-color: #0f59af;
+        --accent-color: #ff6b6b;
+        --bg-light: #f8f9fa;
+        --text-dark: #2c3e50;
+        --text-light: #ecf0f1;
+      }
+
+      .navbar {
+        background-color: var(--primary-color) !important;
+      }
+
+      .contact-hero {
+        background: linear-gradient(
+            rgba(108, 99, 255, 0.8),
+            rgba(74, 144, 226, 0.8)
+          ),
+          url("/api/placeholder/1920/400");
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        color: white;
+      }
+
+      .contact-card {
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        border-radius: 15px;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-icon {
+        font-size: 2.5rem;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+      }
+
+      .btn-success {
+        background-color: var(--accent-color) !important;
+        border-color: var(--accent-color) !important;
+      }
+
+      .btn-success:hover {
+        background-color: #ff5252 !important;
+        border-color: #ff5252 !important;
+      }
+
+      footer {
+        background: var(--text-dark) !important;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+      }
+
+      .social-icons a:hover {
+        color: var(--accent-color) !important;
+        transition: color 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">ModernShop</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./featured.html">Featured</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold">Contact Us</h1>
+        <p class="lead">
+          We're here to help and answer any question you might have
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card contact-card h-100">
+              <div class="card-body text-center">
+                <i class="bi bi-geo-alt contact-icon"></i>
+                <h3 class="h5 mb-3">Visit Us</h3>
+                <p class="mb-0">123 Shopping Street</p>
+                <p class="mb-0">New York, NY 10001</p>
+                <p class="mb-0">United States</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card contact-card h-100">
+              <div class="card-body text-center">
+                <i class="bi bi-telephone contact-icon"></i>
+                <h3 class="h5 mb-3">Call Us</h3>
+                <p class="mb-0">Toll Free: 1-800-123-4567</p>
+                <p class="mb-0">Mobile: +1 234 567 8900</p>
+                <p class="mb-0">Fax: +1 234 567 8901</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card contact-card h-100">
+              <div class="card-body text-center">
+                <i class="bi bi-envelope contact-icon"></i>
+                <h3 class="h5 mb-3">Email Us</h3>
+                <p class="mb-0">support@modernshop.com</p>
+                <p class="mb-0">sales@modernshop.com</p>
+                <p class="mb-0">info@modernshop.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card contact-card">
+              <div class="card-body p-4">
+                <h2 class="text-center mb-4">Send Us a Message</h2>
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="name" class="form-label">Your Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        required
+                      />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="email" class="form-label">Your Email</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="subject"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      rows="5"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg">
+                      Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="card contact-card">
+          <div class="card-body p-0">
+            <!-- Placeholder for map - in real implementation, replace with actual map -->
+            <img
+              src="/api/placeholder/1200/400"
+              alt="Location Map"
+              class="img-fluid w-100"
+              style="border-radius: 15px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>
+              ModernShop is your premium destination for the latest trends in
+              fashion, electronics, and lifestyle products.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-white">Terms & Conditions</a></li>
+              <li><a href="#" class="text-white">Shipping Information</a></li>
+              <li><a href="#" class="text-white">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Connect With Us</h5>
+            <div class="d-flex gap-3 fs-4 social-icons">
+              <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-telegram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 ModernShop. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

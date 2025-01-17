@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ModernShop - Your Premium Shopping Destination</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta
+      name="description"
+      content="ModernShop - Premium shopping experience with latest fashion trends, electronics, and lifestyle products."
+    />
+    <meta
+      name="keywords"
+      content="ecommerce, online shopping, fashion, electronics, lifestyle"
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta
+      property="og:title"
+      content="ModernShop - Premium Shopping Experience"
+    />
+    <meta
+      property="og:description"
+      content="Discover the latest trends in fashion, electronics, and lifestyle products."
+    />
+    <meta property="og:image" content="/api/placeholder/1200/630" />
+    <meta property="og:url" content="https://modernshop.com" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="ModernShop - Premium Shopping Experience"
+    />
+    <meta
+      name="twitter:description"
+      content="Discover the latest trends in fashion, electronics, and lifestyle products."
+    />
+    <meta name="twitter:image" content="/api/placeholder/1200/630" />
+
+    <!-- Telegram Meta Tags -->
+    <meta name="telegram:channel" content="@modernshop" />
+    <meta
+      name="telegram:description"
+      content="Follow us on Telegram for exclusive deals and updates!"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-color: #6c63ff; /* Modern Purple */
+        --secondary-color: #4a90e2; /* Bright Blue */
+        --accent-color: #ff6b6b; /* Coral Pink */
+        --bg-light: #f8f9fa;
+        --text-dark: #2c3e50;
+        --text-light: #ecf0f1;
+      }
+
+      /* Custom Styles */
+      .navbar {
+        background-color: var(--primary-color) !important;
+      }
+
+      .hero-section {
+        background: linear-gradient(
+          rgba(108, 99, 255, 0.8),
+          rgba(74, 144, 226, 0.8)
+        );
+        background-size: cover;
+        background-position: center;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+      }
+
+      <!-- <!-- .product-card {
+        transition: transform 0.3s ease;
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      -->
+      /* Custom styles for product cards */
+      .product-card {
+        transition: transform 0.3s ease-in-out;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-card .card-img-top {
+        height: 280px;
+        object-fit: cover;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .product-card .card-body {
+        padding: 1.5rem;
+      }
+
+      .price-tag {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #2c3e50;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .product-card .card-img-top {
+          height: 240px;
+        }
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+      -->
+
+      /* Product Card Base Styles */
+      .product-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: #ffffff;
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Hover Effects */
+      .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Product Image Styles */
+      .product-card .card-img-top {
+        height: 300px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .product-card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+
+      /* Card Body Styles */
+      .product-card .card-body {
+        padding: 1.5rem;
+        background: #ffffff;
+      }
+
+      .product-card .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+        color: #1a1a1a;
+      }
+
+      .product-card .card-text {
+        font-size: 0.95rem;
+        color: #666666;
+        margin-bottom: 1rem;
+      }
+
+      /* Price Tag Styles */
+      .price-tag {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin: 0.5rem 0;
+      }
+
+      /* Button Styles */
+      .product-card .btn {
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+
+      .product-card .btn-success {
+        background: #28a745;
+        border: none;
+      }
+
+      .product-card .btn-success:hover {
+        background: #218838;
+        transform: translateY(-2px);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .product-card .card-img-top {
+          height: 260px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .product-card .card-img-top {
+          height: 220px;
+        }
+
+        .product-card .card-body {
+          padding: 1.25rem;
+        }
+
+        .price-tag {
+          font-size: 1.25rem;
+        }
+      }
+
+      .category-icon {
+        font-size: 2.5rem;
+        color: var(--accent-color);
+      }
+
+      .newsletter-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: var(--text-light);
+      }
+
+      .btn-success {
+        background-color: var(--accent-color) !important;
+        border-color: var(--accent-color) !important;
+      }
+
+      .btn-success:hover {
+        background-color: #ff5252 !important;
+        border-color: #ff5252 !important;
+      }
+
+      footer {
+        background: var(--text-dark) !important;
+      }
+
+      .card-title {
+        color: var(--text-dark);
+      }
+
+      .bg-light {
+        background-color: var(--bg-light) !important;
+      }
+
+      .social-icons a:hover {
+        color: var(--accent-color) !important;
+        transition: color 0.3s ease;
+      }
+
+      /* Price Tag Styling */
+      .price-tag {
+        color: var(--accent-color);
+        font-size: 1.25rem;
+        font-weight: bold;
+      }
+
+      /* Category Card Hover Effect */
+      .category-card:hover .category-icon {
+        color: var(--primary-color);
+        transform: scale(1.1);
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Rest of the HTML remains the same as the previous version -->
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="./index.html">ModernShop</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/build/featured.html">Featured</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="build/contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-4">Discover Your Style</h1>
+            <p class="lead mb-4">
+              Explore our curated collection of premium products designed to
+              elevate your lifestyle.
+            </p>
+            <a href="#featured" class="btn btn-lg btn-success">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Shop By Category</h2>
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="card text-center product-card category-card h-100">
+              <div class="card-body">
+                <i class="bi bi-watch category-icon mb-3"></i>
+                <h5 class="card-title">Fashion</h5>
+                <p class="card-text">
+                  Latest trends in clothing and accessories
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card text-center product-card category-card h-100">
+              <div class="card-body">
+                <i class="bi bi-laptop category-icon mb-3"></i>
+                <h5 class="card-title">Electronics</h5>
+                <p class="card-text">Cutting-edge gadgets and devices</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card text-center product-card category-card h-100">
+              <div class="card-body">
+                <i class="bi bi-house-heart category-icon mb-3"></i>
+                <h5 class="card-title">Home & Living</h5>
+                <p class="card-text">Beautiful decor and furnishings</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="card text-center product-card category-card h-100">
+              <div class="card-body">
+                <i class="bi bi-gift category-icon mb-3"></i>
+                <h5 class="card-title">Gifts</h5>
+                <p class="card-text">Perfect presents for every occasion</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Featured Products</h2>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="/image/wireless-earbuds.jpg"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Premium Watch</h5>
+                <p class="card-text">Elegant timepiece for any occasion</p>
+                <p class="price-tag mb-3">$199.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="/image/wireless-earbuds.jpg"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Wireless Earbuds</h5>
+                <p class="card-text">Premium sound quality</p>
+                <p class="price-tag mb-3">$149.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div
+                class="product-img-container position-relative overflow-hidden"
+                style="height: 200px"
+              >
+                <img
+                  src="/image/wireless-earbuds.jpg"
+                  class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                  alt="Product 1"
+                />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Designer Bag</h5>
+                <p class="card-text">Stylish and practical</p>
+                <p class="price-tag mb-3">$299.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card product-card h-80">
+              <div class="card product-card h-80">
+                <div
+                  class="product-img-container position-relative overflow-hidden"
+                  style="height: 200px"
+                >
+                  <img
+                    src="/image/wireless-earbuds.jpg"
+                    class="position-absolute top-50 start-50 translate-middle object-fit-contain w-75"
+                    alt="Product 1"
+                  />
+                </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Smart Speaker</h5>
+                <p class="card-text">Voice-controlled assistant</p>
+                <p class="price-tag mb-3">$129.99</p>
+                <button class="btn btn-success w-100">Buy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="contact" class="newsletter-section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2 class="mb-4">Stay Updated</h2>
+            <p class="mb-4">
+              Subscribe to our newsletter for exclusive deals and updates!
+            </p>
+            <form class="d-flex gap-2">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+              />
+              <button type="submit" class="btn btn-success">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>
+              ModernShop is your premium destination for the latest trends in
+              fashion, electronics, and lifestyle products.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-white">Terms & Conditions</a></li>
+              <li><a href="#" class="text-white">Shipping Information</a></li>
+              <li><a href="#" class="text-white">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5 justify-content-md-end mt-3 mt-md-0>Connect With Us</h5>
+            <div
+              class="d-flex gap-3 fs-4 social-icons justify-content-md-end mt-3 mt-md-0"
+            >
+              <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-telegram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 ModernShop. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

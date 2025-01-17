@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - ModernShop</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta
+      name="description"
+      content="Learn about ModernShop's story, mission, and the team behind your favorite shopping destination."
+    />
+    <meta
+      name="keywords"
+      content="about us, company history, team, mission, vision, modernshop"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-color: #07063e;
+        --secondary-color: #0f59af;
+        --accent-color: #ff6b6b;
+        --bg-light: #f8f9fa;
+        --text-dark: #2c3e50;
+        --text-light: #ecf0f1;
+      }
+
+      .navbar {
+        background-color: var(--primary-color) !important;
+      }
+
+      .about-hero {
+        background: linear-gradient(
+            rgba(108, 99, 255, 0.8),
+            rgba(74, 144, 226, 0.8)
+          ),
+          url("/api/placeholder/1920/400");
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        color: white;
+      }
+
+      .about-card {
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        border-radius: 15px;
+      }
+
+      .about-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .team-member-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+
+      .value-icon {
+        font-size: 2.5rem;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+      }
+
+      .timeline {
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background: var(--primary-color);
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+      }
+
+      .timeline-item {
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .stat-card {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .btn-success {
+        background-color: var(--accent-color) !important;
+        border-color: var(--accent-color) !important;
+      }
+
+      .btn-success:hover {
+        background-color: #ff5252 !important;
+        border-color: #ff5252 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/index.html">ModernShop</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="featured.html">Featured</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold">Our Story</h1>
+        <p class="lead">Building the future of online shopping since 2020</p>
+      </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="about-card h-100 p-4">
+              <h2 class="mb-4">Our Mission</h2>
+              <p>
+                To provide an exceptional shopping experience by offering
+                high-quality products, outstanding customer service, and
+                innovative solutions that make online shopping seamless and
+                enjoyable.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="about-card h-100 p-4">
+              <h2 class="mb-4">Our Vision</h2>
+              <p>
+                To become the world's most trusted and preferred online shopping
+                destination, known for our commitment to quality,
+                sustainability, and customer satisfaction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Company Stats Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="stat-card">
+              <h3 class="display-4 fw-bold">1M+</h3>
+              <p class="mb-0">Happy Customers</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <h3 class="display-4 fw-bold">50K+</h3>
+              <p class="mb-0">Products</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <h3 class="display-4 fw-bold">100+</h3>
+              <p class="mb-0">Brands</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="stat-card">
+              <h3 class="display-4 fw-bold">30+</h3>
+              <p class="mb-0">Countries</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Our Core Values</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="about-card h-100 p-4 text-center">
+              <i class="bi bi-star value-icon"></i>
+              <h3>Quality</h3>
+              <p>
+                We never compromise on the quality of our products and services.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="about-card h-100 p-4 text-center">
+              <i class="bi bi-heart value-icon"></i>
+              <h3>Customer First</h3>
+              <p>Our customers are at the heart of everything we do.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="about-card h-100 p-4 text-center">
+              <i class="bi bi-tree value-icon"></i>
+              <h3>Sustainability</h3>
+              <p>
+                Committed to environmental responsibility and sustainable
+                practices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Meet Our Team</h2>
+        <div class="row g-4">
+          <div class="col-md-3">
+            <div class="about-card h-100 p-4 text-center">
+              <img
+                src="/api/placeholder/150/150"
+                alt="Team Member"
+                class="team-member-img"
+              />
+              <h4>John Doe</h4>
+              <p class="text-muted">CEO & Founder</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="about-card h-100 p-4 text-center">
+              <img
+                src="/api/placeholder/150/150"
+                alt="Team Member"
+                class="team-member-img"
+              />
+              <h4>Jane Smith</h4>
+              <p class="text-muted">Head of Design</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="about-card h-100 p-4 text-center">
+              <img
+                src="/api/placeholder/150/150"
+                alt="Team Member"
+                class="team-member-img"
+              />
+              <h4>Mike Johnson</h4>
+              <p class="text-muted">Tech Lead</p>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="about-card h-100 p-4 text-center">
+              <img
+                src="/api/placeholder/150/150"
+                alt="Team Member"
+                class="team-member-img"
+              />
+              <h4>Sarah Wilson</h4>
+              <p class="text-muted">Customer Relations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="py-5">
+      <div class="container text-center">
+        <h2 class="mb-4">Join Our Journey</h2>
+        <p class="mb-4">
+          We're always looking for talented individuals to join our team.
+        </p>
+        <a href="#" class="btn btn-success btn-lg">View Career Opportunities</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>
+              ModernShop is your premium destination for the latest trends in
+              fashion, electronics, and lifestyle products.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-white">Terms & Conditions</a></li>
+              <li><a href="#" class="text-white">Shipping Information</a></li>
+              <li><a href="#" class="text-white">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Connect With Us</h5>
+            <div class="d-flex gap-3 fs-4">
+              <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-telegram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 ModernShop. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

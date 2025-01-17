@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Categories - ModernShop</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta
+      name="description"
+      content="Explore our wide range of product categories at ModernShop. From fashion to electronics, find everything you need."
+    />
+    <meta
+      name="keywords"
+      content="categories, fashion, electronics, home living, gifts, modernshop"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary-color: #6c63ff;
+        --secondary-color: #4a90e2;
+        --accent-color: #ff6b6b;
+        --bg-light: #f8f9fa;
+        --text-dark: #2c3e50;
+        --text-light: #ecf0f1;
+      }
+
+      .navbar {
+        background-color: var(--primary-color) !important;
+      }
+
+      .category-hero {
+        background: linear-gradient(
+            rgba(108, 99, 255, 0.8),
+            rgba(74, 144, 226, 0.8)
+          ),
+          url("/api/placeholder/1920/400");
+        background-size: cover;
+        background-position: center;
+        padding: 80px 0;
+        color: white;
+      }
+
+      .category-card {
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .category-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .category-icon {
+        font-size: 2.5rem;
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .category-card:hover .category-icon {
+        transform: scale(1.1);
+      }
+
+      .category-image {
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .btn-category {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn-category:hover {
+        background-color: #ff5252;
+        color: white;
+      }
+
+      .subcategory-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .subcategory-list li {
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .subcategory-list li:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/index.html">ModernShop</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="categories.html">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="featured.html">Featured</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="bi bi-cart3"></i> Cart</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Category Hero Section -->
+    <section class="category-hero">
+      <div class="container text-center">
+        <h1 class="display-4 fw-bold">Shop By Category</h1>
+        <p class="lead">
+          Discover our wide range of products across various categories
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Categories Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Fashion Category -->
+          <div class="col-lg-6 col-md-6">
+            <div class="category-card h-100">
+              <img
+                src="/api/placeholder/600/300"
+                class="category-image w-100"
+                alt="Fashion"
+              />
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-watch category-icon me-3"></i>
+                  <h3 class="h4 mb-0">Fashion</h3>
+                </div>
+                <p class="card-text">
+                  Explore the latest trends in clothing, accessories, and
+                  footwear.
+                </p>
+                <ul class="subcategory-list mb-4">
+                  <li>Men's Clothing</li>
+                  <li>Women's Clothing</li>
+                  <li>Accessories</li>
+                  <li>Footwear</li>
+                </ul>
+                <a href="#" class="btn btn-category">Shop Fashion</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Electronics Category -->
+          <div class="col-lg-6 col-md-6">
+            <div class="category-card h-100">
+              <img
+                src="/api/placeholder/600/300"
+                class="category-image w-100"
+                alt="Electronics"
+              />
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-laptop category-icon me-3"></i>
+                  <h3 class="h4 mb-0">Electronics</h3>
+                </div>
+                <p class="card-text">
+                  Discover cutting-edge technology and smart devices.
+                </p>
+                <ul class="subcategory-list mb-4">
+                  <li>Smartphones & Tablets</li>
+                  <li>Laptops & Computers</li>
+                  <li>Audio & Headphones</li>
+                  <li>Gaming & Entertainment</li>
+                </ul>
+                <a href="#" class="btn btn-category">Shop Electronics</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Home & Living Category -->
+          <div class="col-lg-6 col-md-6">
+            <div class="category-card h-100">
+              <img
+                src="/api/placeholder/600/300"
+                class="category-image w-100"
+                alt="Home & Living"
+              />
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-house-heart category-icon me-3"></i>
+                  <h3 class="h4 mb-0">Home & Living</h3>
+                </div>
+                <p class="card-text">
+                  Transform your space with our home decor and furniture
+                  collection.
+                </p>
+                <ul class="subcategory-list mb-4">
+                  <li>Furniture</li>
+                  <li>Home Decor</li>
+                  <li>Kitchen & Dining</li>
+                  <li>Bedding & Bath</li>
+                </ul>
+                <a href="#" class="btn btn-category">Shop Home & Living</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gifts Category -->
+          <div class="col-lg-6 col-md-6">
+            <div class="category-card h-100">
+              <img
+                src="/api/placeholder/600/300"
+                class="category-image w-100"
+                alt="Gifts"
+              />
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                  <i class="bi bi-gift category-icon me-3"></i>
+                  <h3 class="h4 mb-0">Gifts</h3>
+                </div>
+                <p class="card-text">
+                  Find the perfect presents for every occasion and celebration.
+                </p>
+                <ul class="subcategory-list mb-4">
+                  <li>Birthday Gifts</li>
+                  <li>Anniversary Presents</li>
+                  <li>Holiday Specials</li>
+                  <li>Corporate Gifts</li>
+                </ul>
+                <a href="#" class="btn btn-category">Shop Gifts</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Special Categories Banner -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="category-card">
+              <div class="card-body text-center p-5">
+                <i class="bi bi-stars category-icon mb-3"></i>
+                <h3>New Arrivals</h3>
+                <p>Be the first to discover our latest products</p>
+                <a href="#" class="btn btn-category">Explore New Arrivals</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="category-card">
+              <div class="card-body text-center p-5">
+                <i class="bi bi-lightning category-icon mb-3"></i>
+                <h3>Flash Sales</h3>
+                <p>Don't miss out on our limited-time offers</p>
+                <a href="#" class="btn btn-category">View Flash Sales</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>
+              ModernShop is your premium destination for the latest trends in
+              fashion, electronics, and lifestyle products.
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-white">Terms & Conditions</a></li>
+              <li><a href="#" class="text-white">Shipping Information</a></li>
+              <li><a href="#" class="text-white">FAQs</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Connect With Us</h5>
+            <div class="d-flex gap-3 fs-4">
+              <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="text-white"><i class="bi bi-telegram"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 ModernShop. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
