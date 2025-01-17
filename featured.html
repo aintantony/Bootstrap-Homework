@@ -212,6 +212,103 @@
       footer {
         background: var(--text-dark) !important;
       }
+      
+      @media (min-width: 1400px) {
+        .product-image {
+          height: 300px;
+        }
+        
+        .product-card {
+          padding: 35px 25px 25px;
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .product-image {
+          height: 280px;
+        }
+        
+        .featured-hero {
+          padding: 60px 0;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .product-image {
+          height: 260px;
+        }
+        
+        .filters {
+          margin-bottom: 1.5rem;
+        }
+        
+        .product-card {
+          padding: 25px 15px 15px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .product-image {
+          height: 240px;
+        }
+        
+        .product-container {
+          margin-bottom: 1.5rem;
+        }
+        
+        .featured-hero {
+          padding: 40px 0;
+        }
+        
+        .filters {
+          padding: 1rem;
+        }
+        
+        .navbar-nav {
+          padding: 1rem 0;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .product-image {
+          height: 200px;
+        }
+        
+        .product-card {
+          margin-top: -20px;
+          padding: 20px 12px 12px;
+        }
+        
+        .featured-hero {
+          padding: 30px 0;
+        }
+        
+        .filters {
+          padding: 1rem 0.75rem;
+          margin: 0 0.5rem 1rem;
+        }
+        
+        .btn-success {
+          padding: 0.5rem 1rem;
+        }
+        
+        .logo {
+          width: 45px;
+        }
+      }
+
+      /* Touch Device Optimizations */
+      @media (hover: none) {
+        .product-card:hover,
+        .product-container:hover .product-card,
+        .product-container:hover .product-image {
+          transform: none;
+        }
+        
+        .btn-success:hover {
+          transform: none;
+        }
+      }
     </style>
   </head>
   <body>

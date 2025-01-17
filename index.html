@@ -159,6 +159,12 @@
         margin-bottom: 1rem;
       }
 
+      .card-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
       /* Price Tag Styles */
       .price-tag {
         font-size: 1.5rem;
@@ -186,80 +192,88 @@
         transform: translateY(-2px);
       }
 
-      /* Responsive Adjustments */
-      @media (max-width: 992px) {
+      /* Mobile Small (375px to 575px) */
+      @media (max-width: 575px) {
         .product-card .card-img-top {
-          height: 260px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .product-card .card-img-top {
-          height: 220px;
+          height: 180px;
         }
 
         .product-card .card-body {
-          padding: 1.25rem;
+          padding: 0.875rem;
+        }
+
+        .category-icon {
+          font-size: 1.5rem;
+        }
+
+        .hero-section {
+          min-height: 50vh;
+        }
+
+        .navbar-brand {
+          font-size: 16px;
+        }
+
+        .logo {
+          width: 40px;
         }
 
         .price-tag {
-          font-size: 1.25rem;
+          font-size: 1rem;
+        }
+
+        .product-card .card-title {
+          font-size: 1.1rem;
+        }
+
+        .product-card .card-text {
+          font-size: 0.875rem;
         }
       }
 
-      .category-icon {
-        font-size: 2.5rem;
-        color: var(--accent-color);
+      /* Very Small Mobile (Below 375px) */
+      @media (max-width: 374px) {
+        .product-card .card-img-top {
+          height: 160px;
+        }
+
+        .hero-section {
+          min-height: 45vh;
+        }
+
+        .category-icon {
+          font-size: 1.3rem;
+        }
+
+        .product-card .card-title {
+          font-size: 1rem;
+        }
+
+        .logo {
+          width: 35px;
+        }
       }
 
-      .newsletter-section {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        color: var(--text-light);
+      /* Landscape Mode */
+      @media (max-height: 576px) and (orientation: landscape) {
+        .hero-section {
+          min-height: 100vh;
+        }
+
+        .product-card .card-img-top {
+          height: 160px;
+        }
       }
 
-      .btn-success {
-        background-color: var(--accent-color) !important;
-        border-color: var(--accent-color) !important;
-      }
-
-      .btn-success:hover {
-        background-color: #ff5252 !important;
-        border-color: #ff5252 !important;
-      }
-
-      footer {
-        background: var(--text-dark) !important;
-      }
-
-      .card-title {
-        color: var(--text-dark);
-      }
-
-      .bg-light {
-        background-color: var(--bg-light) !important;
-      }
-
-      .social-icons a:hover {
-        color: var(--accent-color) !important;
-        transition: color 0.3s ease;
-      }
-
-      /* Price Tag Styling */
-      .price-tag {
-        color: var(--accent-color);
-        font-size: 1.25rem;
-        font-weight: bold;
-      }
-
-      /* Category Card Hover Effect */
-      .category-card:hover .category-icon {
-        color: var(--primary-color);
-        transform: scale(1.1);
-        transition: all 0.3s ease;
+      /* High DPI Screens */
+      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .hero-section {
+          background-image: linear-gradient(
+              rgba(108, 99, 255, 0.8),
+              rgba(74, 144, 226, 0.8)
+            ),
+            url("https://pebblely.com/blog/create-product-images-with-ai/collage-of-ai-generated-images.jpg");
+        }
       }
     </style>
   </head>
